@@ -10,6 +10,7 @@ export default function Home() {
   const [scene, setScene] = useState(0); // 0 = not started, 1 = main, 2 = events, 3 = venues, 4 = thank you
   const [isUnlocking, setIsUnlocking] = useState(false);
   const [showWelcome, setShowWelcome] = useState(false);
+  const [showVenuesModal, setShowVenuesModal] = useState(false);
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -343,9 +344,99 @@ useEffect(() => {
               onClick={() => setScene(1)}
               className="mt-4 px-8 py-3 bg-[#f7f1dd] text-[#2f4a3a] font-serif rounded-full shadow-md hover:scale-105 transition-all"
             >Replay Invitation</button>
+            <button
+  onClick={() => setShowVenuesModal(true)}
+  className="mt-4 px-8 py-3 bg-[#c59b32]/20 text-[#2f4a3a] font-serif rounded-full shadow-md hover:scale-105 transition-all mx-2"
+>
+  See Venues
+</button>
           </div>
         </section>
       )}
+
+      {/* Venues Section */}
+      {/* Venues Modal */}
+{showVenuesModal && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+    <div className="bg-[#FFFDF5] max-w-3xl w-full rounded-3xl shadow-lg overflow-hidden relative flex flex-col max-h-[90vh]">
+      
+      {/* Modal Header */}
+      <div className="flex justify-between items-center px-6 py-4 border-b border-[#c59b32]/30">
+        <h2 className="text-2xl md:text-3xl font-serif text-[#2f4a3a]">Wedding Venues</h2>
+        <button
+          onClick={() => setShowVenuesModal(false)}
+          className="text-2xl md:text-3xl font-bold text-[#c59b32] hover:text-[#a5832b]"
+        >
+          ✕
+        </button>
+      </div>
+
+      {/* Scrollable Content */}
+      <div className="overflow-y-auto p-6 space-y-8">
+        {/* Venue 1 */}
+        <div className="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden">
+          <a
+            href="https://maps.app.goo.gl/uwPuRU5kNCzk6SAt5"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-64 relative cursor-pointer"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d766.9639980472732!2d73.2083189929943!3d23.35172630278896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDIxJzA2LjUiTiA3M8KwMTInMzEuNCJF!5e0!3m2!1sen!2sin!4v1769706420234!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, pointerEvents: "none" }}
+              allowFullScreen
+              loading="lazy"
+              className="absolute inset-0"
+            />
+          </a>
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#2f4a3a] mb-2">Krushankunj Society</h3>
+            <p className="text-base text-[#7a6a5a] mb-4">Dhansura</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-4 py-2 bg-[#ffd3c4] text-[#5a4a3a] text-sm rounded-full">Mahendi Ceremony</span>
+              <span className="px-4 py-2 bg-[#ffd3c4] text-[#5a4a3a] text-sm rounded-full">Haldi Ceremony</span>
+              <span className="px-4 py-2 bg-[#ffd3c4] text-[#5a4a3a] text-sm rounded-full">Ganesh Sthapana</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Venue 2 */}
+        <div className="bg-white rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.08)] overflow-hidden">
+          <a
+            href="https://maps.app.goo.gl/dxrwinTh6YCLmHzP7?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full h-64 relative cursor-pointer"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3663.005806833067!2d73.20615597532375!3d23.35180417894427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjPCsDIxJzA2LjUiTiA3M8KwMTInMzEuNCJF!5e0!3m2!1sen!2sin!4v1769706356083!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0, pointerEvents: "none" }}
+              allowFullScreen
+              loading="lazy"
+              className="absolute inset-0"
+            />
+          </a>
+          <div className="p-6">
+            <h3 className="text-2xl md:text-3xl font-semibold text-[#2f4a3a] mb-2">Near Devya Mahadev Mandir</h3>
+            <p className="text-base text-[#7a6a5a] mb-4">Dhansura</p>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-4 py-2 bg-[#d7f0ff] text-[#5a4a3a] text-sm rounded-full">Ras Garba</span>
+              <span className="px-4 py-2 bg-[#d7f0ff] text-[#5a4a3a] text-sm rounded-full">Mameru</span>
+              <span className="px-4 py-2 bg-[#d7f0ff] text-[#5a4a3a] text-sm rounded-full">Dinner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+
+
 
       {/* Fade-in animation style */}
       <style jsx global>{`
