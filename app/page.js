@@ -189,7 +189,7 @@ export default function Home() {
       {/* Hero */}
       {invitationOpened && (
         <section
-          className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 py-10 sm:py-12 overflow-hidden"
+          className="relative min-h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 py-12 sm:py-12 overflow-hidden"
           style={{
             backgroundImage: "url('/images/karnika_main.jpg')",
             backgroundSize: "cover",
@@ -200,7 +200,8 @@ export default function Home() {
           {/* Animated Falling Flowers removed as per request */}
 
           {/* Content - Positioned in the clear middle area */}
-          <div className="relative z-10 max-w-md mx-auto px-4 mt-28 sm:mt-0 md:-mt-10 pb-0 sm:pb-14 md:pb-22">
+         <div className="relative z-10 max-w-md mx-auto px-4 mt-40 sm:mt-10 md:-mt-10 pb-0 sm:pb-14 md:pb-22">
+
             {/* Names */}
             <div className="mb-3 sm:mb-5">
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-serif text-[#2f4a3a] flex items-center justify-center gap-2 sm:gap-3">
