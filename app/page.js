@@ -114,9 +114,9 @@ useEffect(() => {
   if (scene === 0) return;
   let timeout;
 
-  if (scene === 1) timeout = setTimeout(() => setScene(2), 4000);   // 9 sec
-  if (scene === 2) timeout = setTimeout(() => setScene(3), 4000);  // 11 sec
-  if (scene === 3) timeout = setTimeout(() => setScene(4), 4000);  // 11 sec
+  if (scene === 1) timeout = setTimeout(() => setScene(2), 5000);   // 9 sec
+  if (scene === 2) timeout = setTimeout(() => setScene(3), 7000);  // 11 sec
+  if (scene === 3) timeout = setTimeout(() => setScene(4), 7000);  // 11 sec
 
   return () => clearTimeout(timeout);
 }, [scene]);
